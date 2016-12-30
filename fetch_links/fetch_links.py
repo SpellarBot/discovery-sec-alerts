@@ -20,6 +20,10 @@ def main():
     r = requests.get('https://www.sec.gov/rss/investor/alerts')
           
   root = ET.fromstring(r.text)
-  return json.dumps([x.text
-                     for x
-                     in root.findall('.//channel/item/link')])
+  dict_result = {'result':[x.text
+                           for x
+                           in root.findall('.//channel/item/link')]}
+  json_results = json.dumps(dict_result)
+  return flask.Response(response=json_results,
+			status=200,
+			mimetype='application/json')
