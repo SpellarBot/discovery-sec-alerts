@@ -1,0 +1,9 @@
+---
+contentDir: "content"
+layoutDir: "layouts"
+publishDir: "public"
+indexes:
+  category: "categories"
+baseURL: "http://kognate.github.io/discovery-sec-alerts"
+title: "Create a Watson Discovery Application in N+15 minutes"
+canonifyURLs: true
