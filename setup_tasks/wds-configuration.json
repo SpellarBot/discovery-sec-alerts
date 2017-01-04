@@ -1,0 +1,144 @@
+{
+    "updated": "2016-12-30T19:49:40.919Z",
+    "normalizations": [],
+    "conversions": {
+        "json_normalizations": [],
+        "pdf": {
+            "heading": {
+                "fonts": [
+                    {
+                        "min_size": 24,
+                        "level": 1,
+                        "max_size": 80
+                    },
+                    {
+                        "bold": false,
+                        "min_size": 18,
+                        "level": 2,
+                        "italic": false,
+                        "max_size": 24
+                    },
+                    {
+                        "bold": true,
+                        "min_size": 18,
+                        "level": 2,
+                        "max_size": 24
+                    },
+                    {
+                        "bold": false,
+                        "min_size": 13,
+                        "level": 3,
+                        "italic": false,
+                        "max_size": 18
+                    },
+                    {
+                        "bold": true,
+                        "min_size": 13,
+                        "level": 3,
+                        "max_size": 18
+                    },
+                    {
+                        "bold": false,
+                        "min_size": 11,
+                        "level": 4,
+                        "italic": false,
+                        "max_size": 13
+                    }
+                ]
+            }
+        },
+        "html": {
+            "keep_content": {
+                "xpaths": []
+            },
+            "exclude_tags_keep_content": [
+                "font",
+                "em",
+                "span"
+            ],
+            "exclude_tags_completely": [
+                "script",
+                "sup"
+            ],
+            "exclude_tag_attributes": [
+                "EVENT_ACTIONS"
+            ],
+            "exclude_content": {
+                "xpaths": []
+            }
+        },
+        "word": {
+            "heading": {
+                "styles": [
+                    {
+                        "level": 1,
+                        "names": [
+                            "pullout heading",
+                            "pulloutheading",
+                            "header"
+                        ]
+                    },
+                    {
+                        "level": 2,
+                        "names": [
+                            "subtitle"
+                        ]
+                    }
+                ],
+                "fonts": [
+                    {
+                        "bold": false,
+                        "min_size": 24,
+                        "level": 1,
+                        "italic": false
+                    },
+                    {
+                        "bold": true,
+                        "min_size": 18,
+                        "level": 2,
+                        "italic": false,
+                        "max_size": 23
+                    },
+                    {
+                        "bold": false,
+                        "min_size": 14,
+                        "level": 3,
+                        "italic": false,
+                        "max_size": 17
+                    },
+                    {
+                        "bold": true,
+                        "min_size": 13,
+                        "level": 4,
+                        "italic": false,
+                        "max_size": 13
+                    }
+                ]
+            }
+        }
+    },
+    "name": "sec-alerts-config",
+    "enrichments": [
+        {
+            "destination_field": "extracted_metadata.title_enriched",
+            "source_field": "extracted_metadata.title",
+            "options": {
+                "extract": "entity,keyword"
+            },
+            "enrichment": "alchemy_language"
+        },
+        {
+            "destination_field": "enriched_text",
+            "source_field": "text",
+            "options": {
+                "quotations": true,
+                "sentiment": true,
+                "extract": "keyword, entity, doc-sentiment, taxonomy, concept, relation"
+            },
+            "enrichment": "alchemy_language"
+        }
+    ],
+    "created": "2016-12-30T19:45:45.636Z",
+    "description": null,
+    "configuration_id": "0c6d9dde-787b-4aa5-9619-071a6ff12873"
+}
