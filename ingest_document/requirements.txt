@@ -1,5 +1,6 @@
 click==6.6
 constantly==15.1.0
+CouchDB==1.1
 Flask==0.12
 incremental==16.10.1
 itsdangerous==0.24
